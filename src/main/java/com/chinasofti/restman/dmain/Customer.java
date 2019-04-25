@@ -19,13 +19,13 @@ public class Customer implements Serializable{
 		
 	}
 	
-	public Customer(int cuid, String cuname, String memtype, double cubal, int frozen) {
+	public Customer(int cuid, String cuname, String memtype, double cubal) {
 		super();
 		this.cuId = cuid;
 		this.cuName = cuname;
 		this.memtype = memtype;
 		this.cubal = cubal;
-		this.frozen = frozen;
+		
 	}
 
 	public int getCuid() {
@@ -71,6 +71,7 @@ public class Customer implements Serializable{
 	@Override
 	//重写toString方法显示客户信息
 	public String toString() {
-		return "客户号是:"+this.cuId+"客户姓名是:"+this.cuName+"客户会员类型是:"+this.memtype+"客户余额为:"+this.cubal;
+		return "\n客户号是:"+this.cuId+",客户姓名是:"+this.cuName+",客户会员类型是:"+this.memtype+",客户余额为:"+this.cubal;
 	}
+	
 }

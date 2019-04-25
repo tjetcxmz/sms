@@ -15,6 +15,12 @@ public class Staff implements Serializable{
 		
 	}
 	
+	public Staff(int stId, String stPass) {
+		super();
+		this.stId = stId;
+		this.stPass = stPass;
+	}
+
 	public Staff(int stId, String stName, String stPass) {
 		super();
 		this.stId = stId;
@@ -50,4 +56,5 @@ public class Staff implements Serializable{
 	public String toString() {
 		return "员工号为:"+this.stId+"员工姓名为:"+this.stName;
 	}
+	
 }

@@ -9,16 +9,29 @@ public class Discount implements Serializable{
 	private double memberDis;
 	//超级会员
 	private double superDis;
-
+	//普通会员的优惠额度
+	private  double commonEdu=0.9;
+	//超级会员的额度
+	private  double superEdu=0.75;
+	
 	public Discount() {
 		super();
 		this.commonDis=1;
-		this.memberDis=0.9;
-		this.superDis=0.75;
+		this.memberDis=commonEdu;
+		this.superDis=superEdu;
 	}
-	public void Discount(double memberDis, double superDis) {
-		this.memberDis = memberDis;
-		this.superDis = superDis;
+	public  double getCommonEdu() {
+		return commonEdu;
+	}
+	
+	public double getSuperEdu() {
+		return superEdu;
+	}
+	public void setSuperEdu(double superEdu) {
+		this.superEdu = superEdu;
+	}
+	public void setCommonEdu(double commonEdu) {
+		this.commonEdu = commonEdu;
 	}
 	public double getCommonDis() {
 		return commonDis;

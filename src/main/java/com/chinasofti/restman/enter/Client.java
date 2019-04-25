@@ -1,10 +1,10 @@
-package com.chinasofti.restman.enter;
+package com.chinasofti.restman.Enter;
 
 import com.chinasofti.restman.control.Control;
 
-public class Client {
-	
+public class client {
 	public static void main(String[] args) {
-		new Control().start();
+		Control c=new Control();
+		c.start();
 	}
 }

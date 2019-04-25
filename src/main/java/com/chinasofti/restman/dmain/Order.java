@@ -1,35 +1,63 @@
 package com.chinasofti.restman.dmain;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.io.Serializable;
+import java.sql.Date;
 
 
-public class Order {
-	private int orid;
-	private String ordate;
+public class Order implements Serializable{
+	private String orid;
+	private Date ordate;
 	private int stid;
 	private int cuid;
-	public Order(int orid, String ordate, int stid, int cuid) {
+	@Override
+	public String toString() {
+		return "订单编号："+this.orid+" 订单日期："+this.ordate+" 员工号："+this.stid+" 客户号："+this.cuid;
+	}
+	public Order(String orid, Date ordate, int stid, int cuid) {
 		super();
 		this.orid = orid;
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		ordate = sdf.format(new Date());
+		this.ordate = ordate;
 		this.stid = stid;
 		this.cuid = cuid;
 	}
+	public Order(String ordate, int stid, int cuid) { // 重载的构造方法
+		super();
+
+		this.stid = stid;
+		this.cuid = cuid;
+	}
+
+	
+
+	public Order(Date ordate, int cuid) {
+		super();
+		this.ordate = ordate;
+		this.cuid = cuid;
+	}
+
+	public Order(String orid, Date ordate, int cuid) {
+		super();
+		this.orid = orid;
+		this.ordate = ordate;
+		this.cuid = cuid;
+	}
+
+	
+
 	public Order() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
-	public int getOrid() {
+	public String getOrid() {
 		return orid;
 	}
-	public void setOrid(int orid) {
+	public void setOrid(String orid) {
 		this.orid = orid;
 	}
-	public String getOrdate() {
+	public Date getOrdate() {
 		return ordate;
 	}
-	public void setOrdate(String ordate) {
+	public void setOrdate(Date ordate) {
 		this.ordate = ordate;
 	}
 	public int getStid() {
@@ -44,5 +72,6 @@ public class Order {
 	public void setCuid(int cuid) {
 		this.cuid = cuid;
 	}
+	
 	
 }

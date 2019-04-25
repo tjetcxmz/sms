@@ -33,6 +33,7 @@ public class ClientHandler implements InvocationHandler{
 		oos.flush();
 		//服务器返回结果用于接收
 		ObjectInputStream ois=new ObjectInputStream(client.getInputStream());
+
 		return ois.readObject();
 	}
 	

@@ -11,13 +11,20 @@ public class Administration implements Serializable{
 		
 	}
 	
+	public Administration( int admid,String admPass) {
+		super();
+		this.admId=admid;
+		this.admPass = admPass;
+	}
+	
+	
 	public Administration(int admId, String admName, String admPass) {
 		super();
 		this.admId = admId;
 		this.admName = admName;
 		this.admPass = admPass;
 	}
-	
+
 	public int getAdmId() {
 		return admId;
 	}
